@@ -1,8 +1,14 @@
 #include <iostream>
+#include "database/pg_database.h"
+#include "database/config.h"
 
 
 int main()
 {
-    std::cout << "Hello, World!" << std::endl;
+    PGDatabase db(PGDatabaseParams);
+    std::vector<User> users = db.get_users();
+    for (auto &user: users)
+        std::cout << user.get_login();
+    
     return 0;
 }
