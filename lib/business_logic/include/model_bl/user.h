@@ -5,7 +5,7 @@
 #include <string>
 #include <utility>
 #include <vector>
-#include "model/post.h"
+#include "model_bl/post.h"
 
 
 class UserBL

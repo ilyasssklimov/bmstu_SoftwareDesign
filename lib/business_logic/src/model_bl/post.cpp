@@ -1,4 +1,4 @@
-#include "model/post.h"
+#include "model_bl/post.h"
 
 
 std::string PostBL::get_name()

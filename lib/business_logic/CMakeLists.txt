@@ -1,7 +1,7 @@
 add_library(business_logic STATIC
-        src/model/post.cpp
-        src/model/user.cpp
-        src/model/comment.cpp
+        src/model_bl/post.cpp
+        src/model_bl/user.cpp
+        src/model_bl/comment.cpp
         src/controller/guest.cpp
         src/controller/client.cpp
         src/controller/author.cpp

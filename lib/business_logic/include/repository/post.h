@@ -1,7 +1,7 @@
 #ifndef REPOSITORY_POST_H
 #define REPOSITORY_POST_H
 
-#include "model/post.h"
+#include "model_bl/post.h"
 
 
 class IPostRepository

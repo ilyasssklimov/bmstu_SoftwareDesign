@@ -2,7 +2,7 @@
 #define REPOSITORY_COMMENT_H
 
 
-#include "../model/comment.h"
+#include "model_bl/comment.h"
 
 
 class ICommentRepository

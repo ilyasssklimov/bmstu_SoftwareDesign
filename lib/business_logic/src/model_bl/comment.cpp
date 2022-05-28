@@ -1,4 +1,4 @@
-#include "model/comment.h"
+#include "model_bl/comment.h"
 
 
 std::string CommentBL::get_date()

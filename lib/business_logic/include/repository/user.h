@@ -2,7 +2,7 @@
 #define REPOSITORY_USER_H
 
 
-#include "../model/user.h"
+#include "model_bl/user.h"
 
 
 class IUserRepository
