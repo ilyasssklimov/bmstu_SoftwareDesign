@@ -1,4 +1,4 @@
-#include "model/comment.h"
+#include "model_dal/comment.h"
 
 
 std::string Comment::get_date()

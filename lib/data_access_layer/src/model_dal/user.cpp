@@ -1,4 +1,4 @@
-#include "model/user.h"
+#include "model_dal/user.h"
 
 
 std::string User::get_name()

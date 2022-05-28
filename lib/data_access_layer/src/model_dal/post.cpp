@@ -1,4 +1,4 @@
-#include "model/post.h"
+#include "model_dal/post.h"
 
 
 std::string Post::get_name()
