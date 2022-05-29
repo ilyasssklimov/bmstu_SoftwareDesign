@@ -37,6 +37,12 @@ std::string User::get_access()
 }
 
 
+std::vector<int> User::get_posts_ids()
+{
+    return _posts_ids;
+}
+
+
 void User::set_name(const std::string &value)
 {
     _name = value;
@@ -64,4 +70,10 @@ void User::set_password(const std::string &value)
 void User::set_city(const std::string &value)
 {
     _city = value;
+}
+
+
+void User::set_posts_ids(const std::vector<int> &value)
+{
+    _posts_ids = value;
 }

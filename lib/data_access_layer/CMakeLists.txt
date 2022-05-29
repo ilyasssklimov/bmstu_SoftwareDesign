@@ -16,7 +16,7 @@ add_library(data_access_layer STATIC
         )
 
 target_include_directories(data_access_layer PUBLIC include)
-# target_include_directories(data_access_layer PUBLIC ../business_logic)
+target_link_libraries(data_access_layer logger)
 
 target_link_libraries(data_access_layer "${PQXX_LIBRARIES}")
 
