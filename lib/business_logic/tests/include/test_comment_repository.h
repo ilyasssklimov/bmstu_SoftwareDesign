@@ -1,6 +1,7 @@
 #ifndef TEST_COMMENT_REPOSITORY_H
 #define TEST_COMMENT_REPOSITORY_H
 
+#include <algorithm>
 #include "controller/client.h"
 
 
@@ -12,6 +13,11 @@ public:
     CommentBL get_comment(int comment_id) override
     {
         return _comments[comment_id];
+    }
+
+    int get_comment_id(CommentBL comment) override
+    {
+        return std::distance(_comments.begin(), std::find(_comments.begin(), _comments.end(), comment));
     }
 
     CommentBL add_comment(std::string date, std::string text, int author_id, int post_id) override

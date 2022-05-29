@@ -15,6 +15,11 @@ public:
         return _posts[post_id];
     }
 
+    int get_post_id(PostBL post) override
+    {
+        return std::distance(_posts.begin(), std::find(_posts.begin(), _posts.end(), post));
+    }
+
     std::vector<PostBL> get_posts() override
     {
         return _posts;

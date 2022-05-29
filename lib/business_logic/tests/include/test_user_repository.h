@@ -15,6 +15,12 @@ public:
         return _users[user_id];
     }
 
+    virtual int get_user_id(UserBL user)
+    {
+        return std::distance(_users.begin(), std::find(_users.begin(), _users.end(), user));
+    }
+
+
     virtual bool check_user(const std::string &login, const std::string &password)
     {
         for (UserBL user: _users)
@@ -92,8 +98,8 @@ public:
         return upd_user;
     }
 
-    UserBL update_user(UserBL user, std::string name, std::string surname, std::string login,
-                       std::string password, std::string city, std::vector<PostBL> posts, bool upd_posts)
+    UserBL update_user(UserBL user, const std::string& name, const std::string& surname, const std::string& login,
+                       const std::string& password, const std::string& city, std::vector<PostBL> posts, bool upd_posts)
     {
         std::vector<UserBL> users = get_users();
         std::vector<UserBL>::iterator user_it = std::find(users.begin(), users.end(), user);
