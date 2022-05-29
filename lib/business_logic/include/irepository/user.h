@@ -16,8 +16,8 @@ public:
     virtual UserBL delete_user(int user_id) = 0;
     virtual UserBL update_user(int user_id, std::string name, std::string surname, std::string login,
                                std::string password, std::string city, std::vector<PostBL> posts, bool upd_posts) = 0;
-    virtual UserBL update_user(UserBL user, std::string name, std::string surname, std::string login,
-                               std::string password, std::string city, std::vector<PostBL> posts, bool upd_posts) = 0;
+    virtual UserBL update_user(UserBL user, const std::string& name, const std::string& surname, const std::string& login,
+                               const std::string& password, const std::string& city, std::vector<PostBL> posts, bool upd_posts) = 0;
 };
 
 
