@@ -1,5 +1,5 @@
-#ifndef REPOSITORY_USER_H
-#define REPOSITORY_USER_H
+#ifndef IREPOSITORY_USER_H
+#define IREPOSITORY_USER_H
 
 
 #include "model_bl/user.h"
@@ -21,4 +21,4 @@ public:
 };
 
 
-#endif  // REPOSITORY_USER_H
+#endif  // IREPOSITORY_USER_H

@@ -3,8 +3,8 @@
 
 
 #include "guest.h"
-#include "repository/comment.h"
-#include "repository/user.h"
+#include "irepository/comment.h"
+#include "irepository/user.h"
 
 
 class ClientController: public GuestController

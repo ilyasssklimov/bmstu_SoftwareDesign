@@ -7,8 +7,8 @@
 #include <vector>
 #include "model_bl/post.h"
 #include "model_bl/user.h"
-#include "repository/post.h"
-#include "repository/user.h"
+#include "irepository/post.h"
+#include "irepository/user.h"
 
 
 class GuestController

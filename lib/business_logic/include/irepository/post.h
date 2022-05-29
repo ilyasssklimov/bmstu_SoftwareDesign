@@ -1,5 +1,5 @@
-#ifndef REPOSITORY_POST_H
-#define REPOSITORY_POST_H
+#ifndef IREPOSITORY_POST_H
+#define IREPOSITORY_POST_H
 
 #include "model_bl/post.h"
 
@@ -19,4 +19,4 @@ public:
 };
 
 
-#endif  // REPOSITORY_POST_H
+#endif  // IREPOSITORY_POST_H

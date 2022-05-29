@@ -1,5 +1,5 @@
-#ifndef REPOSITORY_COMMENT_H
-#define REPOSITORY_COMMENT_H
+#ifndef IREPOSITORY_COMMENT_H
+#define IREPOSITORY_COMMENT_H
 
 
 #include "model_bl/comment.h"
@@ -15,4 +15,4 @@ public:
 };
 
 
-#endif  // REPOSITORY_COMMENT_H
+#endif  // REPOSITORY_ICOMMENT_H
