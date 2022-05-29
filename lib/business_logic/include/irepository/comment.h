@@ -15,4 +15,4 @@ public:
 };
 
 
-#endif  // REPOSITORY_ICOMMENT_H
+#endif  // IREPOSITORY_COMMENT_H
