@@ -23,7 +23,7 @@ public:
 
 private:
     IDataBase *_db;
-    PostBL post_to_post_bl(Post post);
+    static PostBL post_to_post_bl(Post post);
 };
 
 #endif  // REPOSITORY_POST_H

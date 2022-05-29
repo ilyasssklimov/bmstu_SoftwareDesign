@@ -25,7 +25,7 @@ private:
     IDataBase *_db;
     std::vector<PostBL> get_posts_bl(const std::vector<int> &posts_ids);
     std::vector<int> get_posts_ids(const std::vector<PostBL> &posts_bl);
-    UserBL user_to_user_bl(User user);
+    static UserBL user_to_user_bl(User user);
 };
 
 
