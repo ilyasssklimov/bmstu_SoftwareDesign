@@ -37,6 +37,19 @@ public:
 };
 
 
+class PostIdGetException: public BaseException
+{
+public:
+    PostIdGetException(const std::string &filename, const int line, const char *time):
+    BaseException(filename, line, time, "Unable to get post id.") {};
+
+    const char *what() const noexcept override
+    {
+        return error.c_str();
+    }
+};
+
+
 class PostsGetException: public BaseException
 {
 public:
