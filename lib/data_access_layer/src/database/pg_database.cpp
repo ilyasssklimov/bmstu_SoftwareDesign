@@ -446,6 +446,26 @@ Comment PGDatabase::get_comment(int comment_id)
 }
 
 
+int PGDatabase::get_comment_id(Comment comment)
+{
+    pqxx::connection connection(_params.c_str());
+    pqxx::work worker(connection);
+    pqxx::result response = worker.exec("SELECT * FROM software.public.comment WHERE date = \'" +
+                                        comment.get_date() + "\' AND text = \'" + comment.get_text() +
+                                        "\' AND author_id = " + std::to_string(comment.get_author_id()) +
+                                        " AND post_id = " + std::to_string(comment.get_post_id()));
+    connection.disconnect();
+
+    if (response.empty())
+    {
+        log_error("Unable to find comment from DB with text = " + comment.get_text());
+        return -1;
+    }
+
+    log_info("Get id of comment from DB with text = " + comment.get_text());
+    return std::stoi(pqxx::to_string(response[0][0]));
+}
+
 Comment PGDatabase::add_comment(std::string date, std::string text, int author_id, int post_id)
 {
     pqxx::connection connection(_params.c_str());

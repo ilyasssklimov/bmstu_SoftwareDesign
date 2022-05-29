@@ -35,6 +35,7 @@ public:
                              std::string city, std::string date) = 0;
 
     virtual Comment get_comment(int comment_id) = 0;
+    virtual int get_comment_id(Comment comment) = 0;
     virtual Comment add_comment(std::string date, std::string text, int author_id, int post_id) = 0;
     virtual Comment delete_comment(int comment_id) = 0;
     virtual Comment update_comment(int comment_id, std::string date, std::string text) = 0;

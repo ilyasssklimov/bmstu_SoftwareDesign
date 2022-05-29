@@ -24,6 +24,22 @@ CommentBL CommentRepository::get_comment(int comment_id)
 }
 
 
+int CommentRepository::get_comment_id(CommentBL comment)
+{
+    Comment comment_dal(comment.get_date(), comment.get_text(), comment.get_author_id(),
+                        comment.get_post_id());
+    int comment_id = _db->get_comment_id(comment_dal);
+
+    if (comment_id == -1)
+    {
+        time_t time_now = time(nullptr);
+        throw CommentGetException(__FILE__, __LINE__, ctime(&time_now));
+    }
+
+    return comment_id;
+}
+
+
 CommentBL CommentRepository::add_comment(std::string date, std::string text, int author_id, int post_id)
 {
     Comment comment = _db->add_comment(date, text, author_id, post_id);

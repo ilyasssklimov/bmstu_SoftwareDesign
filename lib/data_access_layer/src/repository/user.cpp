@@ -46,7 +46,8 @@ std::vector<int> UserRepository::get_posts_ids(const std::vector<PostBL> &posts_
 
 UserBL UserRepository::user_to_user_bl(User user)
 {
-    std::vector<PostBL> posts = get_posts_bl(user.get_posts_ids());
+    std::vector<int> posts_ids = user.get_posts_ids();
+    std::vector<PostBL> posts = get_posts_bl(posts_ids);
     UserBL user_bl = UserBL(user.get_name(), user.get_surname(), user.get_login(),
                             user.get_password(),user.get_city(), user.get_access(), posts);
 
@@ -66,6 +67,17 @@ UserBL UserRepository::get_user(int user_id)
     return user_to_user_bl(user);
 }
 
+int UserRepository::get_user_id(UserBL user)
+{
+    int user_id = _db->get_user_id(user.get_login());
+    if (user_id == -1)
+    {
+        time_t time_now = time(nullptr);
+        throw UserGetException(__FILE__, __LINE__, ctime(&time_now));
+    }
+
+    return user_id;
+}
 
 bool UserRepository::check_user(const std::string &login, const std::string &password)
 {

@@ -12,6 +12,7 @@ public:
     explicit PostRepository(IDataBase *db): _db(db) {};
 
     PostBL get_post(int post_id) override;
+    int get_post_id(PostBL post) override;
     std::vector<PostBL> get_posts() override;
     std::vector<PostBL> get_posts(const std::string& date, const std::string& name,
                                   const std::string& city, const std::string& author) override;

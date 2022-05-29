@@ -26,6 +26,22 @@ PostBL PostRepository::get_post(int post_id)
 }
 
 
+int PostRepository::get_post_id(PostBL post)
+{
+    Post post_dal(post.get_name(), post.get_author_id(), post.get_information(),
+                  post.get_city(), post.get_organizer(), post.get_date());
+    int post_id = _db->get_post_id(post_dal);
+
+    if (post_id == -1)
+    {
+        time_t time_now = time(nullptr);
+        throw PostGetException(__FILE__, __LINE__, ctime(&time_now));
+    }
+
+    return post_id;
+}
+
+
 std::vector<PostBL> PostRepository::get_posts()
 {
     std::vector<Post> posts = _db->get_posts();

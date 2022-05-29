@@ -7,6 +7,7 @@ FetchContent_Declare(
 )
 set(PQXX_LIBRARIES pqxx_static)
 FetchContent_MakeAvailable(libpqxx)
+find_package(PostgreSQL REQUIRED)
 
 add_library(data_access_layer STATIC
         src/model_dal/post.cpp
