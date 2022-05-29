@@ -14,6 +14,7 @@ add_library(data_access_layer STATIC
         src/model_dal/comment.cpp
         src/database/pg_database.cpp
         src/repository/user.cpp
+        src/repository/post.cpp
         )
 
 target_link_libraries(data_access_layer business_logic)

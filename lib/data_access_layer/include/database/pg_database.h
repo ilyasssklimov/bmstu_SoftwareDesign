@@ -13,6 +13,7 @@ public:
 
     std::vector<User> get_users() override;
     User get_user(int user_id) override;
+    int get_user_id(const std::string &login) override;
     User get_user(const std::string &login, const std::string &password) override;
     User add_user(std::string name, std::string surname, std::string login,
                   std::string password, std::string city, std::string access) override;

@@ -86,6 +86,23 @@ User PGDatabase::get_user(int user_id)
     return user;
 }
 
+int PGDatabase::get_user_id(const std::string &login)
+{
+    pqxx::connection connection(_params.c_str());
+    pqxx::work worker(connection);
+    pqxx::result response = worker.exec("SELECT * FROM software.public.user WHERE login = \'" + login + "\'");
+    connection.disconnect();
+
+    if (response.empty())
+    {
+        log_error("Unable to find user from DB with name = " + login);
+        return -1;
+    }
+
+    log_info("Get id of user from DB with name = " + login);
+    return std::stoi(pqxx::to_string(response[0][0]));
+}
+
 
 User PGDatabase::get_user(const std::string &login, const std::string &password)
 {
