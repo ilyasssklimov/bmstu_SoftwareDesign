@@ -24,6 +24,7 @@ public:
 
     virtual std::vector<Post> get_posts() = 0;
     virtual Post get_post(int post_id) = 0;
+    virtual int get_post_id(Post post) = 0;
     virtual std::vector<Post> get_posts(const std::string& date, const std::string& name,
                                         const std::string& city, int author) = 0;
     virtual Post add_post(std::string name, int author_id, std::string information, std::string city,

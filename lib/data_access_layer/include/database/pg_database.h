@@ -24,6 +24,7 @@ public:
 
     std::vector<Post> get_posts() override;
     Post get_post(int post_id) override;
+    int get_post_id(Post post) override;
     std::vector<Post> get_posts(const std::string& date, const std::string& name,
                                 const std::string& city, int author) override;
     Post add_post(std::string name, int author_id, std::string information, std::string city,

@@ -13,8 +13,10 @@ add_library(data_access_layer STATIC
         src/model_dal/user.cpp
         src/model_dal/comment.cpp
         src/database/pg_database.cpp
+        src/repository/user.cpp
         )
 
+target_link_libraries(data_access_layer business_logic)
 target_include_directories(data_access_layer PUBLIC include)
 target_link_libraries(data_access_layer logger)
 

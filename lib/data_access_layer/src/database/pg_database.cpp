@@ -274,6 +274,28 @@ Post PGDatabase::get_post(int post_id)
     return post;
 }
 
+
+int PGDatabase::get_post_id(Post post)
+{
+    pqxx::connection connection(_params.c_str());
+    pqxx::work worker(connection);
+    pqxx::result response = worker.exec("SELECT * FROM software.public.post WHERE name = \'" +
+                                        post.get_name() + "\' AND author_id = " + std::to_string(post.get_author_id()) +
+                                        " AND information = \'" + post.get_information() + "\' AND city = \'" + post.get_city() +
+                                        "\' AND organizer = \'" + post.get_organizer() + "\' AND date = \'" + post.get_date() + "\'");
+    connection.disconnect();
+
+    if (response.empty())
+    {
+        log_error("Unable to find post from DB with name = " + post.get_name());
+        return -1;
+    }
+
+    log_info("Get id of post from DB with name = " + post.get_name());
+    return std::stoi(pqxx::to_string(response[0][0]));
+}
+
+
 std::vector<Post> PGDatabase::get_posts(const std::string& date, const std::string& name,
                                         const std::string& city, int author)
 {
