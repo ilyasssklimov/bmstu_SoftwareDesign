@@ -13,6 +13,7 @@ if (WITH_TESTS)
     set(BUILD_TESTS ON)
 endif()
 
+add_subdirectory(lib/logger)
 add_subdirectory(lib/business_logic)
 add_subdirectory(lib/data_access_layer)
 
