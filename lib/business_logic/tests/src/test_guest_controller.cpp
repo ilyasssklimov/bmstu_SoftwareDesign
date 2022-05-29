@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
-#include "../include/test_post_repository.h"
-#include "../include/test_post_repository.h"
+#include "test_post_repository.h"
+#include "test_post_repository.h"
 
 
 TEST(CONTROLLER_GUEST_TEST, GET_POST)

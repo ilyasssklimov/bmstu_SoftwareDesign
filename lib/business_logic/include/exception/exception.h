@@ -102,6 +102,45 @@ public:
 };
 
 
+class CommentGetException: public BaseException
+{
+public:
+    CommentGetException(const std::string &filename, const int line, const char *time):
+    BaseException(filename, line, time, "Unable to get comment.") {};
+
+    const char *what() const noexcept override
+    {
+        return error.c_str();
+    }
+};
+
+
+class CommentDeleteException: public BaseException
+{
+public:
+    CommentDeleteException(const std::string &filename, const int line, const char *time):
+    BaseException(filename, line, time, "Unable to delete comment.") {};
+
+    const char *what() const noexcept override
+    {
+        return error.c_str();
+    }
+};
+
+
+class CommentUpdateException: public BaseException
+{
+public:
+    CommentUpdateException(const std::string &filename, const int line, const char *time):
+    BaseException(filename, line, time, "Unable to update comment.") {};
+
+    const char *what() const noexcept override
+    {
+        return error.c_str();
+    }
+};
+
+
 class PostAddException: public BaseException
 {
 public:
