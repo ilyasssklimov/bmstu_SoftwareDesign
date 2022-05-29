@@ -63,6 +63,19 @@ public:
 };
 
 
+class PostDeleteException: public BaseException
+{
+public:
+    PostDeleteException(const std::string &filename, const int line, const char *time):
+    BaseException(filename, line, time, "Unable to delete post.") {};
+
+    const char *what() const noexcept override
+    {
+        return error.c_str();
+    }
+};
+
+
 class PostsFilterGetException: public BaseException
 {
 public:
